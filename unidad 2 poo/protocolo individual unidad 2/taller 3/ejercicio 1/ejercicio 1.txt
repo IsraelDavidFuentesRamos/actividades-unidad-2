@@ -1,0 +1,24 @@
+// Ejercicio 1: Clase Coche con Contador de Instancias
+public class Coche {
+    private String marca;
+    private String modelo;
+    private static int contadorCoches = 0;
+    
+    public Coche(String marca, String modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+        contadorCoches++;
+    }
+    
+    public static int obtenerTotalCoches() {
+        return contadorCoches;
+    }
+    
+    public String getMarca() {
+        return marca;
+    }
+    
+    public String getModelo() {
+        return modelo;
+    }
+}

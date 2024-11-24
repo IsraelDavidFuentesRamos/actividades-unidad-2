@@ -1,0 +1,41 @@
+// Ejercicio 3: Ejemplos de uso incorrecto de super
+// Ejemplo 1: Intento de usar super fuera de una clase derivada
+public class EjemploIncorrecto {
+    public void metodoIncorrecto() {
+        // Esto generará un error de compilación
+        // super.toString(); // Error: no hay clase base
+    }
+}
+
+// Ejemplo 2: Intento de acceder a miembro privado de la clase base
+public class ClaseBase {
+    private String datoPrivado;
+    
+    public ClaseBase(String dato) {
+        this.datoPrivado = dato;
+    }
+}
+
+public class ClaseDerivada extends ClaseBase {
+    public ClaseDerivada(String dato) {
+        super(dato);
+    }
+    
+    public void metodoIncorrecto() {
+        // Esto generará un error de compilación
+        // String dato = super.datoPrivado; // Error: datoPrivado es privado
+    }
+}
+
+// Clase principal para probar
+public class Main {
+    public static void main(String[] args) {
+        // Prueba del Ejercicio 1
+        Empleado empleado = new Empleado("Juan", 30, "Ventas");
+        empleado.mostrarDetalles();
+        
+        // Prueba del Ejercicio 2
+        Pez pez = new Pez("Salmón", "Dulce");
+        pez.mostrarEspecie();
+    }
+}

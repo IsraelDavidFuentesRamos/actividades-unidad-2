@@ -1,0 +1,34 @@
+public class Producto {
+    private String nombre;
+    private double precio;
+    
+    // Constructor usando this para diferenciar atributos y parámetros
+    public Producto(String nombre, double precio) {
+        this.nombre = nombre;  // this.nombre se refiere al atributo de la clase
+        this.precio = precio;  // this.precio se refiere al atributo de la clase
+    }
+    
+    // Método para mostrar detalles del producto
+    public void mostrarProducto() {
+        System.out.println("Detalles del Producto:");
+        System.out.println("Nombre: " + this.nombre);
+        System.out.println("Precio: $" + this.precio);
+    }
+    
+    // Métodos de acceso (getters y setters)
+    public String getNombre() {
+        return this.nombre;
+    }
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    public double getPrecio() {
+        return this.precio;
+    }
+    
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+}

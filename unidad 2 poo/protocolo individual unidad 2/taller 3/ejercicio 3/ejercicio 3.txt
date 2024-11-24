@@ -1,0 +1,35 @@
+
+// Clase principal para probar los ejercicios
+public class Main {
+    public static void main(String[] args) {
+        // Prueba Ejercicio 1
+        System.out.println("=== Prueba Clase Coche ===");
+        Coche coche1 = new Coche("Toyota", "Corolla");
+        Coche coche2 = new Coche("Honda", "Civic");
+        Coche coche3 = new Coche("Ford", "Mustang");
+        
+        System.out.println("Total de coches creados: " + Coche.obtenerTotalCoches());
+        
+        // Prueba Ejercicio 2
+        System.out.println("\n=== Prueba Clase Matematicas ===");
+        double num1 = 10;
+        double num2 = 5;
+        
+        System.out.println("Suma: " + Matematicas.sumar(num1, num2));
+        System.out.println("Resta: " + Matematicas.restar(num1, num2));
+        System.out.println("Multiplicación: " + Matematicas.multiplicar(num1, num2));
+        System.out.println("División: " + Matematicas.dividir(num1, num2));
+    }
+}
+
+// Ejercicio 3: Ejemplo de uso incorrecto de static (con error de compilación)
+public class EjemploIncorrecto {
+    private String nombre;
+    
+    // Este método generará un error de compilación
+    public static void modificarNombre(String nuevoNombre) {
+        nombre = nuevoNombre;  // Error: no se puede acceder a una variable no static desde un método static
+    }
+}
+
+// Ejercicio 3: Versión corregida

@@ -1,0 +1,30 @@
+// Ejercicio 1: Clase Persona y Empleado
+public class Persona {
+    protected String nombre;
+    protected int edad;
+    
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+    
+    public void mostrarDetalles() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Edad: " + edad);
+    }
+}
+
+public class Empleado extends Persona {
+    private String departamento;
+    
+    public Empleado(String nombre, int edad, String departamento) {
+        super(nombre, edad); // Llamada al constructor de la clase base
+        this.departamento = departamento;
+    }
+    
+    @Override
+    public void mostrarDetalles() {
+        super.mostrarDetalles(); // Llamada al método de la clase base
+        System.out.println("Departamento: " + departamento);
+    }
+}

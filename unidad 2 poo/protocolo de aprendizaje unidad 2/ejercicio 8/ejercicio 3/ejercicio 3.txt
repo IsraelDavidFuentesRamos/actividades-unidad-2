@@ -1,0 +1,41 @@
+// Ejercicio 3: Clase Empleado y Clase Gerente
+public class Empleado {
+    protected String nombre;
+    protected double salario;
+    
+    public Empleado(String nombre, double salario) {
+        this.nombre = nombre;
+        this.salario = salario;
+    }
+    
+    public void mostrarDetalles() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Salario: $" + salario);
+    }
+}
+
+public class Gerente extends Empleado {
+    private String departamento;
+    
+    public Gerente(String nombre, double salario, String departamento) {
+        super(nombre, salario);
+        this.departamento = departamento;
+    }
+    
+    @Override
+    public void mostrarDetalles() {
+        super.mostrarDetalles();
+        System.out.println("Departamento: " + departamento);
+    }
+}
+
+// Clase principal para probar todos los ejercicios
+public class Main {
+    public static void main(String[] args) {
+        // Prueba Ejercicio 1: Vehículo y Coche
+        System.out.println("=== Prueba Vehículo y Coche ===");
+        Vehiculo vehiculo = new Vehiculo("Toyota", 180);
+        Coche coche = new Coche("Honda", 200, 4);
+        
+        System.out.println("Información del Vehículo:");
+        vehiculo.mo

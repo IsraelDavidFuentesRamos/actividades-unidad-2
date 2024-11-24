@@ -1,0 +1,64 @@
+// Ejercicio 3: Ejemplos de uso incorrecto
+// Ejemplo 1: Error de compilación por cambio de firma
+public class VehiculoIncorrecto {
+    public void acelerar(int velocidad) {
+        System.out.println("Acelerando a " + velocidad + " km/h");
+    }
+}
+
+public class CocheIncorrecto extends VehiculoIncorrecto {
+    // Esto generará error de compilación
+    @Override
+    public void acelerar() { // Error: firma diferente
+        System.out.println("El coche está acelerando");
+    }
+}
+
+// Ejemplo 2: Mala práctica - no usar @Override
+public class Animal {
+    public void hacerSonido() {
+        System.out.println("El animal hace un sonido");
+    }
+}
+
+public class Gato extends Animal {
+    // Mala práctica: falta @Override
+    public void hacerSonido() { // Debería tener @Override
+        System.out.println("El gato hace miau");
+    }
+}
+
+// Clase principal para probar todo
+public class Main {
+    public static void main(String[] args) {
+        // Prueba del Ejercicio 1
+        System.out.println("--- Prueba de Persona, Estudiante y Profesor ---");
+        Persona persona = new Persona("Juan", 30);
+        Persona estudiante = new Estudiante("Ana", 20, "Informática");
+        Persona profesor = new Profesor("Carlos", 45, "Matemáticas");
+        
+        persona.presentarse();
+        estudiante.presentarse();
+        profesor.presentarse();
+        
+        // Prueba del Ejercicio 2
+        System.out.println("\n--- Prueba de Vehículo y Bicicleta ---");
+        Vehiculo vehiculo = new Vehiculo("Genérico");
+        Vehiculo bicicleta = new Bicicleta("Montaña", 21);
+        
+        vehiculo.moverse();
+        bicicleta.moverse();
+        
+        // Demostración de polimorfismo con array
+        System.out.println("\n--- Demostración de Polimorfismo ---");
+        Persona[] personas = {
+            new Persona("Miguel", 25),
+            new Estudiante("Laura", 19, "Medicina"),
+            new Profesor("Roberto", 50, "Física")
+        };
+        
+        for (Persona p : personas) {
+            p.presentarse(); // Polimorfismo en acción
+        }
+    }
+}

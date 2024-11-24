@@ -1,0 +1,37 @@
+public class EjemploThis {
+    private String dato;
+    
+    // Ejemplo incorrecto: Intento de usar this en método estático
+    /*
+    public static void metodoDatoEstatico() {
+        // Esto generará un error de compilación
+        System.out.println(this.dato);  // Error: no se puede usar this en contexto estático
+    }
+    */
+    
+    // Corrección: Método estático sin this
+    public static void metodoDatoEstatico() {
+        System.out.println("Este es un método estático");
+        // No podemos acceder a datos de instancia aquí
+    }
+    
+    // Método de instancia (no estático) - uso correcto de this
+    public void metodoDatoInstancia() {
+        System.out.println("Dato de instancia: " + this.dato);
+    }
+    
+    // Constructor
+    public EjemploThis(String dato) {
+        this.dato = dato;
+    }
+    
+    // Método main para demostrar el uso
+    public static void main(String[] args) {
+        // Llamada al método estático - no necesita instancia
+        metodoDatoEstatico();
+        
+        // Crear instancia y llamar al método de instancia
+        EjemploThis ejemplo = new EjemploThis("Ejemplo");
+        ejemplo.metodoDatoInstancia();
+    }
+}

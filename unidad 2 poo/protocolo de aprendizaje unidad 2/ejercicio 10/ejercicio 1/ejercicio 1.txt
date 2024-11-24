@@ -1,0 +1,42 @@
+// Ejercicio 1: Clase Persona y clases derivadas
+public class Persona {
+    protected String nombre;
+    protected int edad;
+    
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+    
+    public void presentarse() {
+        System.out.println("Hola, soy una persona llamada " + nombre);
+    }
+}
+
+public class Estudiante extends Persona {
+    private String carrera;
+    
+    public Estudiante(String nombre, int edad, String carrera) {
+        super(nombre, edad);
+        this.carrera = carrera;
+    }
+    
+    @Override
+    public void presentarse() {
+        System.out.println("Hola, soy un estudiante de " + carrera + " llamado " + nombre);
+    }
+}
+
+public class Profesor extends Persona {
+    private String materia;
+    
+    public Profesor(String nombre, int edad, String materia) {
+        super(nombre, edad);
+        this.materia = materia;
+    }
+    
+    @Override
+    public void presentarse() {
+        System.out.println("Hola, soy el profesor " + nombre + " y enseño " + materia);
+    }
+}

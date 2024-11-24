@@ -1,0 +1,26 @@
+// Ejercicio 2: Clase Vehiculo y Bicicleta
+public class Vehiculo {
+    protected String tipo;
+    
+    public Vehiculo(String tipo) {
+        this.tipo = tipo;
+    }
+    
+    public void moverse() {
+        System.out.println("El vehículo está en movimiento");
+    }
+}
+
+public class Bicicleta extends Vehiculo {
+    private int numeroVelocidades;
+    
+    public Bicicleta(String tipo, int numeroVelocidades) {
+        super(tipo);
+        this.numeroVelocidades = numeroVelocidades;
+    }
+    
+    @Override
+    public void moverse() {
+        System.out.println("La bicicleta se mueve usando pedales. Tiene " + numeroVelocidades + " velocidades");
+    }
+}
